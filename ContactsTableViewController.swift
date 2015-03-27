@@ -9,10 +9,17 @@
 import UIKit
 
 class ContactsTableViewController: UITableViewController {
+    
+    var contactsArray = [Contacts]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var tim = Contacts(firstName: "Tim", lastName: "Smith", cellPhoneNumber: "888-555-1212")
+        var jon = Contacts(firstName: "Jon", lastName: "Doe", cellPhoneNumber: "8003331212")
+        self.contactsArray.append(tim)
+        self.contactsArray.append(jon)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +44,9 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 5
+        println(self.contactsArray.count)
+        return self.contactsArray.count
+        
     }
 
 
@@ -45,7 +54,15 @@ class ContactsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "A fine example of a UITableViewCell"
+        //cell.textLabel?.text = "A fine example of a UITableViewCell"
+        println(contactsArray[1])
+        println(indexPath.row)
+        let contact = contactsArray[indexPath.row]
+        println(contact)
+        cell.textLabel?.text = contact.firstName
+        println("Contact\(contact.firstName)")
+        //var cellToString = String(contact.cellPhoneNumber)
+        //cell.detailTextLabel?.text = cellToString
         
         return cell
     }

@@ -14,6 +14,7 @@
 		D92C3EA21AC597570099875E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92C3EA01AC597570099875E /* LaunchScreen.xib */; };
 		D92C3EAE1AC597570099875E /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C3EAD1AC597570099875E /* ContactsTests.swift */; };
 		D92C3EBA1AC59C970099875E /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C3EB91AC59C970099875E /* ContactsTableViewController.swift */; };
+		D92C3EBC1AC5B72F0099875E /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C3EBB1AC5B72F0099875E /* Contacts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		D92C3EAC1AC597570099875E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92C3EAD1AC597570099875E /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		D92C3EB91AC59C970099875E /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D92C3EBB1AC5B72F0099875E /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				D92C3EB91AC59C970099875E /* ContactsTableViewController.swift */,
+				D92C3EBB1AC5B72F0099875E /* Contacts.swift */,
 				D92C3E971AC597570099875E /* AppDelegate.swift */,
 				D92C3E991AC597570099875E /* ViewController.swift */,
 				D92C3E9B1AC597570099875E /* Main.storyboard */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92C3EBC1AC5B72F0099875E /* Contacts.swift in Sources */,
 				D92C3E9A1AC597570099875E /* ViewController.swift in Sources */,
 				D92C3E981AC597570099875E /* AppDelegate.swift in Sources */,
 				D92C3EBA1AC59C970099875E /* ContactsTableViewController.swift in Sources */,
