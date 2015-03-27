@@ -17,9 +17,9 @@ class Contacts: NSObject {
 
     
     init(firstName:String, lastName: String, cellPhoneNumber: String){
-        let firstName = self.firstName
-        let lastName = self.lastName
-        let cellPhoneNumber = self.cellPhoneNumber
+        self.firstName = firstName
+        self.lastName = lastName
+        self.cellPhoneNumber = cellPhoneNumber
         super.init()
     }
     
