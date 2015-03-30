@@ -27,7 +27,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="WBS-AK-hVV" kind="show" identifier="" id="Zg5-M5-y5m"/>
+                                    <segue destination="TaZ-5V-iIx" kind="show" identifier="contactsDetailSegue" id="EBc-Ij-M1e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,32 +75,41 @@
             </objects>
             <point key="canvasLocation" x="1749" y="-145"/>
         </scene>
-        <!--Details-->
-        <scene sceneID="OqS-ns-GpB">
+        <!--Detail View Controller-->
+        <scene sceneID="nME-TH-Bpy">
             <objects>
-                <tableViewController id="WBS-AK-hVV" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ttR-bt-aNd">
+                <viewController id="TaZ-5V-iIx" customClass="DetailViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="70n-zz-tYs"/>
+                        <viewControllerLayoutGuide type="bottom" id="fD4-SE-FOa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KpG-A1-EW4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsD-2T-6qC">
+                                <rect key="frame" x="52" y="105" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdw-op-XnB">
+                                <rect key="frame" x="52" y="151" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Details" id="nW1-Fg-oAG">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nW1-Fg-oAG" id="G18-vs-cah">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="WBS-AK-hVV" id="YYL-iN-ArZ"/>
-                            <outlet property="delegate" destination="WBS-AK-hVV" id="ped-tN-CWg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Details" id="qGv-dG-eU8"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CaI-yQ-GgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="JsD-2T-6qC" id="chu-ha-VOs"/>
+                        <outlet property="phoneNumberLabel" destination="Cdw-op-XnB" id="IUS-h7-nUt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSh-RX-7R8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="539"/>
+            <point key="canvasLocation" x="1749" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="spC-Jl-nDq">

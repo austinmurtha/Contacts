@@ -40,11 +40,21 @@ class ContactsTableViewController: UITableViewController {
         // Return the number of sections.
         return 1
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Talk to Eric about this
+        //let indexPath = self.tableView.indexPathForCell(sender as UITableView)!
+        let indexPath = self.tableView.indexPathForCell(sender as UITableViewCell)!
+        let contact = self.contactsArray[indexPath.row]
+        
+        var destination = segue.destinationViewController as DetailViewController
+        destination.contact = contact
+        
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        println(self.contactsArray.count)
         return self.contactsArray.count
         
     }
@@ -55,14 +65,9 @@ class ContactsTableViewController: UITableViewController {
 
         // Configure the cell...
         //cell.textLabel?.text = "A fine example of a UITableViewCell"
-        println(contactsArray[1])
-        println(indexPath.row)
         let contact = contactsArray[indexPath.row]
-        println(contact)
         cell.textLabel?.text = contact.firstName
-        println("Contact\(contact.firstName)")
-        //var cellToString = String(contact.cellPhoneNumber)
-        //cell.detailTextLabel?.text = cellToString
+
         
         return cell
     }
