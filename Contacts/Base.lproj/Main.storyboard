@@ -36,44 +36,11 @@
                             <outlet property="delegate" destination="1U6-lb-Qyo" id="ypH-UQ-jmx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="i9s-CI-mqV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lcW-F7-r9M">
-                            <connections>
-                                <segue destination="ygn-jG-Rpq" kind="show" id="bEn-hu-aGe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="i9s-CI-mqV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPA-qu-5cC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="988" y="149"/>
-        </scene>
-        <!--Add Contact-->
-        <scene sceneID="bJq-5D-uPh">
-            <objects>
-                <tableViewController id="ygn-jG-Rpq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aFW-dN-ud4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddContact" id="vzg-T4-QVw">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vzg-T4-QVw" id="GUz-mq-7xV">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ygn-jG-Rpq" id="S11-k8-2oA"/>
-                            <outlet property="delegate" destination="ygn-jG-Rpq" id="eS8-zk-021"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add Contact" id="sc0-Ip-nt7"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mpd-BS-qSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1749" y="-145"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="nME-TH-Bpy">
@@ -87,29 +54,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsD-2T-6qC">
-                                <rect key="frame" x="52" y="105" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdw-op-XnB">
-                                <rect key="frame" x="52" y="151" width="154" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OKN-1c-oSF">
+                                <rect key="frame" x="16" y="72" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcY-Za-B85">
+                                <rect key="frame" x="16" y="110" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZn-Ck-Hin">
+                                <rect key="frame" x="16" y="148" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="JsD-2T-6qC" id="chu-ha-VOs"/>
-                        <outlet property="phoneNumberLabel" destination="Cdw-op-XnB" id="IUS-h7-nUt"/>
+                        <outlet property="lastNameLabel" destination="vcY-Za-B85" id="Aye-M5-FAd"/>
+                        <outlet property="nameLabel" destination="OKN-1c-oSF" id="NP7-El-VKD"/>
+                        <outlet property="phoneNumberLabel" destination="oZn-Ck-Hin" id="dY8-ww-BDl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSh-RX-7R8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="507"/>
+            <point key="canvasLocation" x="1733" y="149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="spC-Jl-nDq">

@@ -8,10 +8,13 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var phoneNumberLabel: UITextField!
+    
+    @IBOutlet weak var lastNameLabel: UITextField!
+    
     var contact: Contacts?
     
     
@@ -19,12 +22,16 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //ask about delegates
+        self.nameLabel.delegate = self
+        self.lastNameLabel.delegate = self
+        self.phoneNumberLabel.delegate = self
         
         // Why unwrap at contact instead of at the end??
-        
-        nameLabel.text = contact!.firstName + " " + contact!.lastName
-        
-        phoneNumberLabel.text = contact!.cellPhoneNumber
+        // Why did self work here and not without self
+        self.nameLabel.text = contact!.firstName
+        self.lastNameLabel.text = contact!.lastName
+        self.phoneNumberLabel.text = contact!.cellPhoneNumber
         
     }
 
@@ -33,6 +40,16 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField == self.nameLabel {
+            self.contact?.firstName = textField.text
+        } else if textField == self.phoneNumberLabel{
+            self.contact?.cellPhoneNumber == textField.text
+        } else if textField == self.lastNameLabel {
+            self.contact?.lastName = textField.text
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

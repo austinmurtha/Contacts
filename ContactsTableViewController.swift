@@ -15,6 +15,7 @@ class ContactsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         var tim = Contacts(firstName: "Tim", lastName: "Smith", cellPhoneNumber: "888-555-1212")
         var jon = Contacts(firstName: "Jon", lastName: "Doe", cellPhoneNumber: "800-333-1212")
         self.contactsArray.append(tim)
@@ -22,6 +23,9 @@ class ContactsTableViewController: UITableViewController {
         
         let moveButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("toggleEdit"))
         self.navigationItem.leftBarButtonItem = moveButton
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addContact"))
+        self.navigationItem.rightBarButtonItem = addButton
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,14 +39,33 @@ class ContactsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
     
     func toggleEdit() {
         self.tableView.setEditing(!self.tableView.editing, animated: true)
-        let doneButton = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "toggleDone")
         self.navigationItem.leftBarButtonItem = doneButton
         
+    }
+    
+    func toggleDone() {
+        self.tableView.setEditing(!self.tableView.editing, animated: true)
+        let doneButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "toggleEdit")
+        self.navigationItem.leftBarButtonItem = doneButton
+        
+    }
+    
+    func addContact() {
+        let newContact = Contacts(firstName: "Please", lastName: "Enter", cellPhoneNumber: "000-000-0000")
+        self.contactsArray.append(newContact)
+        let newIndexPath = NSIndexPath(forRow: self.contactsArray.count - 1, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -94,7 +117,7 @@ class ContactsTableViewController: UITableViewController {
         // Configure the cell...
         //cell.textLabel?.text = "A fine example of a UITableViewCell"
         let contact = contactsArray[indexPath.row]
-        cell.textLabel?.text = contact.firstName
+        cell.textLabel?.text = contact.firstName + " " + contact.lastName
 
         
         return cell
