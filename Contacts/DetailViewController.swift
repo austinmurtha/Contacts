@@ -19,6 +19,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+        // Why unwrap at contact instead of at the end??
+        
         nameLabel.text = contact!.firstName + " " + contact!.lastName
         
         phoneNumberLabel.text = contact!.cellPhoneNumber
